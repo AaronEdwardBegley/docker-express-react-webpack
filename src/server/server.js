@@ -11,7 +11,7 @@ if (isDeveloping) {
     let webpack = require('webpack');
     let webpackMiddleware = require('webpack-dev-middleware');
     let webpackHotMiddleware = require('webpack-hot-middleware');
-    let config = require('./webpack.config.js');
+    let config = require('./../../webpack.config.js');
 
     const compiler = webpack(config);
     const middleware = webpackMiddleware(compiler, {
@@ -24,7 +24,7 @@ if (isDeveloping) {
         }
     });
 
-    const bundlePath = path.join(__dirname, './public/build/index.html');
+    const bundlePath = path.join(__dirname, '../../public/build/index.html');
 
     app.use(middleware);
     app.use(webpackHotMiddleware(compiler));
@@ -35,7 +35,7 @@ if (isDeveloping) {
 
 
 } else {
-    const staticPath = path.join(__dirname, 'public/build');
+    const staticPath = path.join(__dirname, '../../public/build');
     app.use(express.static(staticPath));
 }
 
