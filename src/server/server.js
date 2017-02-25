@@ -6,7 +6,7 @@ const port = isDeveloping ? 8080 : process.env.PORT;
 const app = express();
 
 if (isDeveloping) {
-    console.info('💄 Setting up development environment...');
+    console.info('💄 Setting up client development environment...');
 
     let webpack = require('webpack');
     let webpackMiddleware = require('webpack-dev-middleware');
@@ -45,8 +45,8 @@ app.listen(port, '0.0.0.0', function onStart(err) {
     }
 
     if(isDeveloping){
-        console.info('Development Environment setup complete. 💋');
-        console.info('webpack-hot-middleware compiler watching src. express listening on http://0.0.0.0:%s/', port);
+        console.info('Client development environment setup complete. 💋');
+        console.info('webpack-hot-middleware compiler watching src/client. express listening on http://0.0.0.0:%s/', port);
     } else {
         console.info('Production Environment');
         console.info('express listening on http://0.0.0.0:%s/', port);
